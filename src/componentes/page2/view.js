@@ -1,17 +1,18 @@
 import React from 'react';
 import {
-    
     Paper,
-   
+    TextField,
+    Button
+
 } from "@material-ui/core";
 
 
-function view() {
+function View() {
     return (
         <Paper>
-            
+            vista2
         </Paper>
     );
 }
 
-export default view;
+export default View;
