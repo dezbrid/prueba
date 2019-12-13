@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import page1 from   './componentes/page1';
 import page2 from   './componentes/page2';
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
+
 const Root=(
    
     <BrowserRouter>

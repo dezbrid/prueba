@@ -1,6 +1,7 @@
-import React from 'react';
-import { FormData } from './model';
-import "./style.css"
+import React, { useState } from 'react';
+
+
+import "../style.css"
 import {
     Paper,
     TextField,
@@ -9,24 +10,45 @@ import {
 } from "@material-ui/core";
 
 
+
 function View(props) {
+    
     const {
         onClickButton
         
     }= props;
+
+    const [field, setField] = useState({
+        fieldName: '',
+        fieldAge: '',
+    });
+
+    const updateField = e => {
+        setField({
+            ...field,
+            [e.target.name]: e.target.value
+        });
+
+    };
+    
+
     return (
         <Paper className="paper">
-            {FormData.map((field, index) => {
-                return (
-                    <TextField key={index}
-                        id={field.id}
-                        value={field.value}
-                        label={field.label}
-                        /*onChange={() => }*/>
-                    </TextField>
-                );
-            })}
-            <Button variant="contained" color="primary" onClick={() =>onClickButton()} >boton</Button>
+
+            <TextField
+                name={"fieldName"}
+                value={field.fieldName}
+                label={"name"}
+                onChange={updateField} />
+
+            <TextField
+                name={"fieldAge"}
+                value={field.fieldAge}
+                label={"Age"}
+                onChange={updateField} />
+
+
+            <Button variant="contained" color="primary" onClick={() => onClickButton(field.fieldName, field.fieldAge)} >Go to page2</Button>
         </Paper>
     );
 }

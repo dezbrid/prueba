@@ -1,16 +1,24 @@
 import React from 'react';
+
 import {
     Paper,
-    TextField,
+    Typography,
     Button
 
 } from "@material-ui/core";
+function View(props) {
+    const {
+        onClickButton,
+        arrivalData
 
+    } = props;
 
-function View() {
     return (
-        <Paper>
-            vista2
+        <Paper className="paper">
+            <Typography gutterBottom component="p" >
+               su nombres es: {arrivalData.name} y  su edad es {arrivalData.age}
+            </Typography>
+            <Button variant="contained" color="primary" onClick={() => onClickButton()} >Go to back</Button>
         </Paper>
     );
 }
