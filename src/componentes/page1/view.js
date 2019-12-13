@@ -38,7 +38,7 @@ function View(props) {
             <TextField
                 name={"fieldName"}
                 value={field.fieldName}
-                label={"name"}
+                label={"Name"}
                 onChange={updateField} />
 
             <TextField
